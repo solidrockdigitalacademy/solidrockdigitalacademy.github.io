@@ -57,9 +57,28 @@ nav {
 }
 
 .logo {
-    font-size: 21px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 18px;
     font-weight: 800;
     letter-spacing: 0.5px;
+}
+
+.logo img {
+    width: 45px;
+    height: 45px;
+    object-fit: contain;
+    border-radius: 50%;
+}
+
+.logo span {
+    color: #ffffff;
+}
+
+.logo span::first-letter {
+    color: #b88cff;
+}
 }
 
 .logo span {
@@ -206,6 +225,13 @@ nav {
     background: radial-gradient(circle,#34165b,#0c0920 70%);
     box-shadow: 0 0 70px rgba(152,75,255,.4);
     z-index: 1;
+}.academy-orb img {
+    width: 175px;
+    height: 175px;
+    object-fit: contain;
+    border-radius: 50%;
+    position: relative;
+    z-index: 2;
 }
 
 .academy-orb strong {
@@ -463,10 +489,7 @@ Chat With Us
 <div class="hero-card">
 
 <div class="academy-orb">
-<div>
-<strong>SDA</strong>
-<small>Digital Academy</small>
-</div>
+    <img src="file_0000000051d881f4b492a3209714b572.png" alt="Solidrock Digital Academy">
 </div>
 
 </div>
