@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Solidrock Digital Academy | Learn. Create. Earn.</title>
+
+<meta name="description" content="Solidrock Digital Academy provides practical digital skills, technology training and solutions for the digital future.">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #070612;
+    color: #ffffff;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.container {
+    width: 90%;
+    max-width: 1150px;
+    margin: auto;
+}
+
+/* NAVIGATION */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(7, 6, 18, 0.88);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.nav-inner {
+    height: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 21px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+}
+
+.logo span {
+    color: #b88cff;
+}
+
+.nav-links {
+    display: flex;
+    gap: 28px;
+    align-items: center;
+}
+
+.nav-links a {
+    color: #ddd;
+    font-size: 14px;
+    transition: .3s;
+}
+
+.nav-links a:hover {
+    color: #c18cff;
+}
+
+.nav-btn {
+    background: linear-gradient(135deg,#7b35ff,#b15cff);
+    padding: 11px 19px;
+    border-radius: 30px;
+    font-weight: 700;
+    color: white !important;
+}
+
+/* HERO */
+.hero {
+    min-height: 100vh;
+    padding: 150px 0 90px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 20% 30%, rgba(117,50,255,.28), transparent 35%),
+        radial-gradient(circle at 80% 20%, rgba(192,75,255,.18), transparent 30%),
+        #070612;
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1.1fr .9fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.badge {
+    display: inline-block;
+    padding: 8px 15px;
+    border: 1px solid rgba(190,130,255,.4);
+    border-radius: 30px;
+    background: rgba(139,61,255,.08);
+    color: #d0a7ff;
+    font-size: 13px;
+    margin-bottom: 22px;
+}
+
+.hero h1 {
+    font-size: clamp(42px,6vw,72px);
+    line-height: 1.05;
+    margin-bottom: 24px;
+}
+
+.gradient-text {
+    background: linear-gradient(90deg,#a56cff,#e0b3ff,#8e5bff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero p {
+    color: #b9b6c8;
+    font-size: 18px;
+    max-width: 650px;
+    margin-bottom: 32px;
+}
+
+.buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 14px 23px;
+    border-radius: 30px;
+    font-weight: 700;
+    display: inline-block;
+    transition: .3s;
+}
+
+.primary {
+    background: linear-gradient(135deg,#7435ff,#b452ff);
+    box-shadow: 0 10px 35px rgba(128,48,255,.3);
+}
+
+.secondary {
+    border: 1px solid #493d64;
+    background: rgba(255,255,255,.04);
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+}
+
+/* HERO CARD */
+.hero-card {
+    position: relative;
+    min-height: 390px;
+    border-radius: 30px;
+    border: 1px solid rgba(185,133,255,.25);
+    background: linear-gradient(145deg,rgba(55,27,92,.65),rgba(12,10,29,.9));
+    box-shadow: 0 30px 80px rgba(0,0,0,.45);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.hero-card::before {
+    content: "";
+    position: absolute;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    background: #8b42ff;
+    filter: blur(100px);
+    opacity: .35;
+}
+
+.academy-orb {
+    width: 190px;
+    height: 190px;
+    border-radius: 50%;
+    border: 1px solid rgba(221,186,255,.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: radial-gradient(circle,#34165b,#0c0920 70%);
+    box-shadow: 0 0 70px rgba(152,75,255,.4);
+    z-index: 1;
+}
+
+.academy-orb strong {
+    font-size: 26px;
+}
+
+.academy-orb small {
+    display: block;
+    color: #c9a7ef;
+    margin-top: 5px;
+}
+
+/* SECTIONS */
+section {
+    padding: 95px 0;
+}
+
+.section-title {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 50px;
+}
+
+.section-title h2 {
+    font-size: 38px;
+    margin-bottom: 13px;
+}
+
+.section-title p {
+    color: #aaa6b9;
+}
+
+/* ABOUT */
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.about-box {
+    padding: 35px;
+    border-radius: 22px;
+    background: #100d20;
+    border: 1px solid #242039;
+}
+
+.about-box h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.about-box p {
+    color: #aaa6b9;
+}
+
+/* SKILLS */
+.skills {
+    background: #0a0815;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 20px;
+}
+
+.card {
+    padding: 30px;
+    border-radius: 20px;
+    background: linear-gradient(145deg,#151126,#0d0b18);
+    border: 1px solid #252039;
+    transition: .3s;
+}
+
+.card:hover {
+    transform: translateY(-7px);
+    border-color: #7545b7;
+}
+
+.icon {
+    font-size: 34px;
+    margin-bottom: 18px;
+}
+
+.card h3 {
+    margin-bottom: 10px;
+}
+
+.card p {
+    color: #aaa6b9;
+    font-size: 14px;
+}
+
+/* CTA */
+.cta {
+    padding: 80px 0;
+}
+
+.cta-box {
+    text-align: center;
+    padding: 65px 25px;
+    border-radius: 30px;
+    background:
+        radial-gradient(circle at center,rgba(130,52,255,.22),transparent 55%),
+        #110c20;
+    border: 1px solid #33224c;
+}
+
+.cta-box h2 {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.cta-box p {
+    color: #aaa6b9;
+    max-width: 650px;
+    margin: 0 auto 28px;
+}
+
+/* FOOTER */
+footer {
+    background: #05040b;
+    border-top: 1px solid #1c1828;
+    padding: 45px 0 25px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 40px;
+}
+
+footer h3 {
+    margin-bottom: 15px;
+}
+
+footer p,
+footer a {
+    color: #9793a5;
+    font-size: 14px;
+}
+
+footer a {
+    display: block;
+    margin-bottom: 8px;
+}
+
+.copyright {
+    border-top: 1px solid #1a1724;
+    margin-top: 35px;
+    padding-top: 20px;
+    text-align: center;
+    color: #777384;
+    font-size: 13px;
+}
+
+/* MOBILE */
+@media(max-width:800px) {
+
+    .nav-links {
+        display: none;
+    }
+
+    .hero-grid,
+    .about-grid,
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+        padding-top: 125px;
+    }
+
+    .hero h1 {
+        font-size: 44px;
+    }
+
+    .hero-card {
+        min-height: 300px;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    section {
+        padding: 70px 0;
+    }
+
+    .section-title h2 {
+        font-size: 31px;
+    }
+
+    .cta-box h2 {
+        font-size: 30px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+<nav>
+<div class="container nav-inner">
+
+<div class="logo">
+Solidrock <span>Digital Academy</span>
+</div>
+
+<div class="nav-links">
+<a href="#about">About</a>
+<a href="#skills">Skills</a>
+<a href="#why">Why SDA</a>
+<a href="#contact" class="nav-btn">Get Started</a>
+</div>
+
+</div>
+</nav>
+
+
+<!-- HERO -->
+<header class="hero">
+
+<div class="container hero-grid">
+
+<div>
+
+<span class="badge">🚀 THE DIGITAL FUTURE STARTS HERE</span>
+
+<h1>
+Learn Digital Skills.<br>
+<span class="gradient-text">Create. Earn.</span>
+</h1>
+
+<p>
+Welcome to Solidrock Digital Academy — a practical digital learning platform helping individuals build valuable skills, create digital opportunities and thrive in the modern digital economy.
+</p>
+
+<div class="buttons">
+
+<a href="#skills" class="btn primary">
+Explore Skills →
+</a>
+
+<a href="https://wa.me/2349095935546" class="btn secondary">
+Chat With Us
+</a>
+
+</div>
+
+</div>
+
+
+<div class="hero-card">
+
+<div class="academy-orb">
+<div>
+<strong>SDA</strong>
+<small>Digital Academy</small>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</header>
+
+
+<!-- ABOUT -->
+<section id="about">
+
+<div class="container">
+
+<div class="section-title">
+<h2>Welcome to <span class="gradient-text">SDA</span></h2>
+
+<p>
+We believe digital skills can transform lives, businesses and communities.
+</p>
+</div>
+
+
+<div class="about-grid">
+
+<div class="about-box">
+
+<h3>🎓 Practical Learning</h3>
+
+<p>
+Our approach focuses on practical skills that you can actually use — from creating content and editing videos to using modern AI tools and building digital businesses.
+</p>
+
+</div>
+
+
+<div class="about-box">
+
+<h3>🌍 Built for the Digital Age</h3>
+
+<p>
+Solidrock Digital Academy equips learners with relevant digital knowledge to confidently navigate today's rapidly changing technology-driven world.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- SKILLS -->
+<section id="skills" class="skills">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>Build Skills That <span class="gradient-text">Matter</span></h2>
+
+<p>
+Explore practical digital skills designed to help you learn, create and unlock new opportunities.
+</p>
+
+</div>
+
+
+<div class="cards">
+
+<div class="card">
+<div class="icon">🎬</div>
+<h3>Video Editing</h3>
+<p>
+Learn professional video editing techniques for social media, businesses, brands and content creation.
+</p>
+</div>
+
+
+<div class="card">
+<div class="icon">🤖</div>
+<h3>AI Tools</h3>
+<p>
+Discover how modern AI tools can help you create content, automate tasks and work smarter.
+</p>
+</div>
+
+
+<div class="card">
+<div class="icon">🎨</div>
+<h3>Graphic Design</h3>
+<p>
+Develop practical design skills for social media, marketing materials, branding and digital products.
+</p>
+</div>
+
+
+<div class="card">
+<div class="icon">📱</div>
+<h3>Digital Marketing</h3>
+<p>
+Learn how to promote products, services and personal brands using today's digital platforms.
+</p>
+</div>
+
+
+<div class="card">
+<div class="icon">💻</div>
+<h3>Content Creation</h3>
+<p>
+Learn how to create engaging content that attracts attention and builds a strong online presence.
+</p>
+</div>
+
+
+<div class="card">
+<div class="icon">💰</div>
+<h3>Digital Monetization</h3>
+<p>
+Understand practical ways to turn valuable digital skills and knowledge into income opportunities.
+</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- WHY SDA -->
+<section id="why">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>Why Learn With <span class="gradient-text">SDA?</span></h2>
+
+<p>
+We're focused on helping you move from simply consuming technology to confidently creating with it.
+</p>
+
+</div>
+
+
+<div class="cards">
+
+<div class="card">
+<div class="icon">⚡</div>
+<h3>Practical</h3>
+<p>
+Learn through real-world applications instead of unnecessary theory.
+</p>
+</div>
+
+
+<div class="card">
+<div class="icon">🧠</div>
+<h3>Relevant</h3>
+<p>
+Stay equipped with digital skills that match today's changing online world.
+</p>
+</div>
+
+
+<div class="card">
+<div class="icon">🚀</div>
+<h3>Opportunity-Focused</h3>
+<p>
+Build skills that can support freelancing, business, content creation and career growth.
+</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- CTA -->
+<section id="contact" class="cta">
+
+<div class="container">
+
+<div class="cta-box">
+
+<h2>Ready to Build Your <span class="gradient-text">Digital Future?</span></h2>
+
+<p>
+Start learning practical digital skills and discover what you can create with technology.
+</p>
+
+<a href="https://wa.me/2349095935546" class="btn primary">
+Start Your Journey →
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+
+<div class="container">
+
+<div class="footer-grid">
+
+<div>
+<h3>Solidrock Digital Academy</h3>
+
+<p>
+Creating a Digital Future Through Skills & Solutions.
+</p>
+
+</div>
+
+
+<div>
+<h3>Explore</h3>
+
+<a href="#about">About SDA</a>
+<a href="#skills">Digital Skills</a>
+<a href="#why">Why SDA</a>
+</div>
+
+
+<div>
+<h3>Connect</h3>
+
+<a href="https://wa.me/2349095935546">WhatsApp</a>
+<a href="https://facebook.com/">Facebook</a>
+<a href="https://youtube.com/">YouTube</a>
+</div>
+
+</div>
+
+
+<div class="copyright">
+© 2026 Solidrock Digital Academy. All Rights Reserved.
+</div>
+
+</div>
+
+</footer>
+
+</body>
+  </html>
